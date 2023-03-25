@@ -1,0 +1,190 @@
+
+1. User define logic gates :=======================================================================================================================
+
+
+def AND():
+    print("--------------AND GATE----------------")
+    i=0
+    while i<4:
+        a=int(input("Enter a value of a :"))
+        b=int(input("Enter a value of b :"))
+        if a==1 and b==1 :
+            ans=1
+        elif a!=1 and b!=1 or a!=0 and b!=0:
+            exit()
+        else:
+            ans=0
+        print(a,"AND",b,"=",ans)
+        i+=1
+    print("---------------------------------------")
+    
+def OR():
+    print("--------------OR GATE----------------")
+    i=0
+    while i<4:
+        a=int(input("Enter a value of a :"))
+        b=int(input("Enter a value of b :"))
+        if a==1 and b==1 :
+            ans=0
+        elif a!=1 and b!=1 or a!=0 and b!=0:
+            print("Enter value in 0 or 1 !!!")
+        else:
+            ans=1
+        print(a,"OR",b,"=",ans)
+        i+=1
+    print("---------------------------------------")
+
+def NOT():
+    print("--------------NOT GATE----------------")
+    i=0
+    while i<2:
+        a=int(input("Enter a value of a :"))
+        if a==1:
+            ans=0
+        elif a!=1 and a!=0:
+            print("Enter value in 0 or 1 !!!")
+        else:
+            ans=1
+        print(a,"= NOT =",ans)
+        i+=1
+    print("---------------------------------------")
+
+def NAND():
+    print("--------------NAND GATE----------------")
+    i=0
+    while i<4:
+        a=int(input("Enter a value of a :"))
+        b=int(input("Enter a value of b :"))
+        if a==1 and b==1 :
+            ans=0
+        elif a!=1 and b!=1 or a!=0 and b!=0:
+            print("Enter value in 0 or 1 !!!")
+        else:
+            ans=1
+        print(a,"NAND",b,"=",ans)
+        i+=1
+    print("---------------------------------------")
+    
+def NOR():
+    print("--------------NOR GATE----------------")
+    i=0
+    while i<4:
+        a=int(input("Enter a value of a :"))
+        b=int(input("Enter a value of b :"))
+        if a==0 and b==0 :
+            ans=1
+        elif a!=1 and b!=1 or a!=0 and b!=0:
+            print("Enter value in 0 or 1 !!!")
+        else:
+            ans=0
+        print(a,"NOR",b,"=",ans)
+        i+=1
+    print("---------------------------------------")
+        
+def XOR():
+    print("--------------XOR GATE----------------")
+    i=0
+    while i<4:
+        a=int(input("Enter a value of a :"))
+        b=int(input("Enter a value of b :"))
+        if a==1 and b==1 or a==0 and b==0 :
+            ans=0
+        elif a!=1 and b!=1 or a!=0 and b!=0:
+            print("Enter value in 0 or 1 !!!")
+        else:
+            ans=1
+        print(a,"XOR",b,"=",ans)
+        i+=1
+    print("---------------------------------------")
+
+def XNOR():
+    print("--------------XNOR GATE----------------")
+    i=0
+    while i<4:
+        a=int(input("Enter a value of a :"))
+        b=int(input("Enter a value of b :"))
+        if a==1 and b==1 or a==0 and b==0 :
+            ans=0
+        elif a!=1 and b!=1 or a!=0 and b!=0:
+            print("Enter value in 0 or 1 !!!")
+        else:
+            ans=1
+        print(a,"XNOR",b,"=",ans)
+        i+=1
+    print("---------------------------------------")
+
+ch=input("enter your choice ::1.AND 2.OR 3.NOT 4.NAND 5.NOR 6.XOR 7.XNOR :==>")
+if ch=='1':
+    AND()
+elif ch=='2':
+    OR()
+elif ch=='3':
+    NOT()
+elif ch=='4':
+    NAND()
+elif ch=='5':
+    NOR()
+elif ch=='6':
+    XOR()
+elif ch=='7':
+    XNOR()
+else:
+    print('Enter correct choice :')
+
+2. JK Flip-Flop ===================================================================================================================================
+
+i=0
+while i<8:
+    
+    J = int(input('Enter state <0/1> :'))
+    K = int(input('Enter state <0/1> :'))
+    Qp = int(input('Enter state <0/1> :'))
+    
+    if J==0 and K==0 and Qp==0:
+        ans=0
+        print(ans,',Hold state')
+    elif J==0 and K==0 and Qp==1:
+        ans=1
+        print(ans,',Hold state')
+    elif (J==0 and K==1 and Qp==0) or (J==0 and K==1 and Qp==1):
+        ans=0
+        print(ans,',Reset state')
+    elif (J==1 and K==0 and Qp==0) or (J==1 and K==0 and Qp==1):
+        ans=1
+        print(ans,',Set state')
+    elif J==1 and K==1 and Qp==0:
+        ans=1
+        print(ans,',Toggle state')
+    elif J==1 and K==1 and Qp==0:
+        ans=0
+        print(ans,',Toggle state')
+    else:
+        print("Enter correct values !")
+
+
+3. SR Flip-Flop ===================================================================================================================================
+
+i=0
+while i<8:
+    
+    S = int(input('Enter state SET <0/1> :'))
+    R = int(input('Enter state RESET <0/1> :'))
+    Qp = int(input('Enter state <0/1> :'))
+    
+    if S==0 and R==0 and Qp==0:
+        ans=0
+        print(ans,',Hold state')
+    elif S==0 and R==0 and Qp==1:
+        ans=1
+        print(ans,',Hold state')
+    elif (S==0 and R==1 and Qp==0) or (S==0 and R==1 and Qp==1):
+        ans=0
+        print(ans,',Reset state')
+    elif (S==1 and R==0 and Qp==0) or (S==1 and R==0 and Qp==1):
+        ans=1
+        print(ans,',Set state')
+    elif S==1 and R==1 and Qp==0 or S==1 and R==1 and Qp==1:
+        ans=1
+        print(ans,',Indeterminate state')
+    else:
+        print("Enter correct values !")
